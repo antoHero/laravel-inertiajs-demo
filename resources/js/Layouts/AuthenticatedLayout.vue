@@ -6,6 +6,7 @@ import DropdownLink from '@/Components/DropdownLink.vue';
 import NavLink from '@/Components/NavLink.vue';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
 import { Link } from '@inertiajs/inertia-vue3';
+import SidebarLinks from './SidebarLinks.vue';
 
 const showingNavigationDropdown = ref(false);
 </script>
@@ -31,6 +32,10 @@ const showingNavigationDropdown = ref(false);
                             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                                 <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
+                                </NavLink>
+
+                                <NavLink :href="route('categories.index')" :active="$page.url.startsWith('/categories')">
+                                    Categories
                                 </NavLink>
                             </div>
                         </div>
